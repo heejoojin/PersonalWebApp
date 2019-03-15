@@ -1,8 +1,8 @@
 {
-  "name": "Build Your First Webapp",
-  "description": "A barebones Node.js app using Express 4",
+  "name": "muny",
+  "description": "pottery studio based in Busan, South Korea",
   "repository": "",
   "logo": "",
   "keywords": ["node", "express", "static"],
-  "image": "heroku/nodejs"
+  "image": ""
 }
