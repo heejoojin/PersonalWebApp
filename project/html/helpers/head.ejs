@@ -22,3 +22,16 @@
 <script src="/js/main.js"></script>
 
 <!-- Now everything we'll need to use firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: '<%= process.env.API_KEY %>',
+    authDomain: "muny-studio-d81e2.firebaseapp.com",
+    databaseURL: "https://muny-studio-d81e2.firebaseio.com",
+    projectId: "muny-studio-d81e2",
+    storageBucket: "muny-studio-d81e2.appspot.com",
+    messagingSenderId: "497870777649"
+  };
+  firebase.initializeApp(config);
+</script>
