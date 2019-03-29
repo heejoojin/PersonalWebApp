@@ -16,6 +16,7 @@ function initializeStreamListener() {
     if (messages) {
       Object.keys(messages).forEach(function (key) {
         const message = messages[key];
+        
         $('#stream').append(`<div>${message.body}</div>`);
       });
     }
@@ -29,6 +30,8 @@ function addMessage(body, title) {
   var authorPic = user.photoURL;
   var author = user.displayName;
 
+  var name = user.displayName;
+
   var postData = {
     author: author,
     authorPic: authorPic,
@@ -37,6 +40,7 @@ function addMessage(body, title) {
   };
 
   var newPostKey = firebase.database().ref().child('stream').push().key;
+  $('#account').html(name);
   firebase.database().ref('/stream/' + newPostKey).set(postData);
 }
 
@@ -65,7 +69,7 @@ function toggleSignIn() {
   }
 
   //This disables the button until login or logout is successful
-  $('#login-button').attr("disabled", true);
+  $('#login-button').attr("disabled", false);
 }
 
 
@@ -85,3 +89,176 @@ window.onload = function() {
     $('#login-button').attr("disabled", false);
   });
 };
+
+/*https://deanhume.com/a-basic-guide-to-firebase-for-the-web/*/
+
+/*
+// Firebase Config
+var config = {
+  apiKey: "AIzaSyBUNJfWoMRc7Vs8Ml5Q-ZLkXj-zD6fgtW0",
+  authDomain: "radiant-torch-3037.firebaseapp.com",
+  databaseURL: "https://radiant-torch-3037.firebaseio.com",
+  projectId: "radiant-torch-3037",
+  storageBucket: "radiant-torch-3037.appspot.com",
+  messagingSenderId: "419105606981"
+};
+firebase.initializeApp(config);
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="comments">
+        <h2>Leave a comment below!</h2>
+        <CommentForm />
+        <CommentList />
+        <footer>
+          &#169; 2019 by <a target="blank" href="https://github.com/joshbivens">Josh Bivens</a>
+        </footer>
+      </div>
+    )
+  }
+}
+
+class CommentForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      comment: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  formatTime() {
+    const options = {
+      month: '2-digit',
+      day: '2-digit',
+      year: '2-digit',
+      hour: '2-digit',
+      minute:'2-digit'
+    };
+    let now = new Date().toLocaleString('en-US', options);
+    return now;
+  }
+  escapeHTML(html) {
+    // Thank you to Andreas Borgen for this bit:
+    // https://codepen.io/Sphinxxxx/pen/wjzRKO?editors=0010
+    const div = document.createElement('div');
+    div.textContent = html;
+    return div.innerHTML;
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    
+    const user = {
+      username: this.state.username,
+      comment: this.escapeHTML(this.state.comment),
+      time: this.formatTime(),
+    }
+    
+    const db = firebase.database().ref('comments');
+    db.push(user);
+    
+    this.setState({
+      username: '',
+      comment: ''
+    })
+  }
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+  render() {
+    return (
+      <div className="comments-form">
+        <form onSubmit={this.handleSubmit}>
+          <ul>
+            <li>
+              <input
+                name="username"
+                type="text" 
+                placeholder="Name"  
+                value={this.state.username}
+                onChange={this.handleChange}
+                required
+               />
+            </li>
+            <li>
+              <textarea
+                name="comment"
+                placeholder="Comment"
+                value={this.state.comment}
+                onChange={this.handleChange}
+                required
+              ></textarea>
+            </li>
+            <li><input type="submit" value="Post &#9998;" /></li>
+          </ul>
+        </form>
+      </div>
+    )
+  }
+}
+
+class CommentList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: []
+    }
+  }
+  componentWillMount() {
+    // const db = firebase.database().ref('comments');
+  }
+  componentDidMount() {
+    const db = firebase.database().ref('comments');
+    
+    db.on('value', (snapshot) => {
+      const comments = snapshot.val();
+      const arr = [];
+      for(const comment in comments) {
+        arr.push({
+          username: comments[comment].username,
+          comment: comments[comment].comment,
+          time: comments[comment].time,
+        })
+      };
+      
+      this.setState({
+        comments: arr.reverse()
+      });
+    })
+  }
+  render() {
+    return (
+      <div className="comments-list">
+        {
+          this.state.comments.map(comment => (
+            <Comment
+              username={comment.username}
+              comment={comment.comment}
+              time={comment.time}
+            />                          
+          ))
+        }
+      </div>
+    )
+  }
+}
+
+class Comment extends React.Component {
+  render() {
+    const { username, comment, time } = this.props;
+    return (
+      <div className="comment">
+        <h4>{username} says</h4>
+        <p className="timestamp">{time}</p>
+        <p>{comment}</p>
+      </div>
+    )
+  }
+}
+
+const mountNode = document.getElementById("app");
+React.render(<App />, mountNode);*/

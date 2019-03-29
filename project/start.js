@@ -18,13 +18,21 @@ app.get('/about', function(request, response) {
   response.render('pages/about');
 });
 
-app.get('/projects', function(request, response) {
-  response.render('pages/projects');
+app.get('/class', function(request, response) {
+  response.render('pages/class');
+});
+
+app.get('/membership', function(request, response) {
+  response.render('pages/membership');
 });
 
 app.get('/contact', function(request, response) {
   response.render('pages/contact');
 });
+
+/*app.get('/register', function(request, response) {
+  response.render('pages/classregisteration');
+});*/
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
