@@ -32,7 +32,7 @@ input[type='text'], input[type='password'], textarea {
     color: #534b46;
 }
 
-input[type='submit'], button {
+input[type='submit'], button, #js_send {
     font-family: 'Goudy Bookletter 1911', serif;
     font-size: 18px;
     border-style: none;
@@ -56,7 +56,6 @@ input:focus, textarea:focus {
 #email {
     height: 300px;
 }
-
 
 
 button:focus {
