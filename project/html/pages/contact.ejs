@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
     <% include ../helpers/head %>
+    <link rel="stylesheet" href="css/membership.css">
 </head>
 <body class="container">
   <main>
@@ -19,7 +20,38 @@
               <br/>enjoy getting dirty with us !</h1>-->
             </div>
             <div class ="box1-3">
-              <h1>comming soon !</h1>
+              <h1>contact us for answers to all of your questions!</h1>
+              <br/><br/>
+              <form id="javascript_form">
+                <input type="text" name="subject" placeholder="Subject" />
+                <br/>
+                <textarea name="text" placeholder="Message" id="email"></textarea>
+                <br/>
+                <input type="hidden" name="access_token" value="vidskx7ze3limw1z9be1mirr" />
+                <!-- return urls can be fully qualified -OR-
+                  start with / for root relative -OR-
+                  start with . for url relative --> 
+                <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+                <!-- set the reply-to address -->
+                <input type="text" name="reply_to"
+                        placeholder="Your Email" />
+                <br/>
+
+                <!-- to append extra fields, use the extra_ prefix.
+                Entries will be appended to your message body. -->
+                <!-- <input type="text" name="extra_phone_number"
+                        placeholder="Phone Number" /> -->
+
+                <!-- to split your message into 160 chars
+                  for an sms gateway -->
+                <!-- <input type="hidden"
+                        name="sms_format" value="true" /> -->
+                <input type="submit" id="js_send" value="Send" />
+                <script src="/js/email.js"></script>
+              </form>
+            
+              
                   <!--<button id="login-button" class="btn btn-default" type="button" onclick="toggleSignIn()">
                     Sign in to view stream
                   </button>
