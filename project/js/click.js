@@ -1,8 +1,8 @@
 // Create the HTML for the message
 var msg = '<div class=\"header\"><a id=\"close\" href="#"><h2 id="close">&#10005;<h2></a></div>';
 msg += '<div><h2>This Membership Webpage is Currently Under Construction</h2>';
-msg += 'We are in the process of updating sign&ndash;up and sing&ndash;in functionality to better serve you guys!<br/>';
-msg += 'During this process, we recommend you to use your google account to join our membership :)<br/>Thank you for your understanding &#10084;</div>';
+msg += 'we are in the process of updating sign&ndash;up and sing&ndash;in functionality!<br/>';
+msg += 'we recommend you to use your google account to join our membership :)<br/>thank you so muchfor your understanding <i class="fa fa-heart" id="heart" aria-hidden="true"></i></div>';
 
 var elNote = document.createElement('div');       // Create a new element
 elNote.setAttribute('id', 'note');                // Add an id of note

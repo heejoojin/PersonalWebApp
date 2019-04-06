@@ -30,8 +30,8 @@ app.get('/contact', function(request, response) {
   response.render('pages/contact');
 });
 
-app.get('/findus', function(request, response) {
-  response.render('pages/findus');
+app.get('/direction', function(request, response) {
+  response.render('pages/direction');
 });
 
 /*app.get('/register', function(request, response) {
