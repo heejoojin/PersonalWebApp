@@ -12,7 +12,7 @@ function init() {
   
   function loadScript() {
     var script = document.createElement('script');     // Create <script> element
-    script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&callback=init';
+    script.src = 'http://maps.googleapis.com/maps/<%= process.env.Google_Map %>/js?sensor=false&callback=init';
     document.body.appendChild(script);                 // Add element to page
   }
   
