@@ -30,6 +30,10 @@ app.get('/contact', function(request, response) {
   response.render('pages/contact');
 });
 
+app.get('/findus', function(request, response) {
+  response.render('pages/findus');
+});
+
 /*app.get('/register', function(request, response) {
   response.render('pages/classregisteration');
 });*/

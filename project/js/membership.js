@@ -52,6 +52,7 @@ function checkUsername() {                            // Declare function
   });
 }());*/
 
+
 var el = 0;
 var username;
 function toggleLogIn() {
