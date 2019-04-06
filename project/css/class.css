@@ -1,7 +1,8 @@
 
 
 .gallery {
-    width: 100%;
+    
+    width: 250px;
     background: #ecdece;
     margin:auto;
     border-radius: 5px;
@@ -10,10 +11,11 @@
 }
 
 .gallery img {
-    width: 100%;
+    
     height: auto;
     border-radius: 5px;
     padding-bottom: 20px;
+    width: 250px;
 }
 
 #class {
@@ -97,7 +99,7 @@ button:focus {
 }
 
 /* ----------------------------------- 599px -----------------------------------  */
-@media (max-width: 599px) {
+/*@media (max-width: 599px) {
 
     #class li {
         float: none;
@@ -114,7 +116,7 @@ button:focus {
     }
 }
 
-/* ----------------------------------- 600px - 767px -----------------------------------  */
+/* ----------------------------------- 600px - 767px ----------------------------------- 
 @media (min-width: 600px) and (max-width: 767px) {
     .gallery, .gallery img {
         width: 100px;
@@ -122,7 +124,7 @@ button:focus {
 
 }
 
-/* ----------------------------------- 786px -----------------------------------  */
+/* ----------------------------------- 786px ----------------------------------- 
 @media (min-width: 768px) {
 .gallery, .gallery img {
     width: 150px;
@@ -130,17 +132,10 @@ button:focus {
 
 }
 
-/* ----------------------------------- 1000px -----------------------------------  */
-@media (min-width: 1000px) {
+/* ----------------------------------- 1000px ----------------------------------- */
+@media (max-width: 1100px) {
 .gallery, .gallery img {
-    min-width: 200px;
+    width: 200px;
 }
 
-}
-
-@media (min-width: 1366px) {
-.gallery, .gallery img {
-    min-width: 250px;
-}
-    
 }
